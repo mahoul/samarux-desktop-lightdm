@@ -1,6 +1,6 @@
 Name:           samarux-desktop-lightdm
 Version:        0.1
-Release:        4
+Release:        5
 Summary:        LightDM tweaks for samarux-desktop.
 License:        GPL
 Source: 	%{name}-%{version}.tar.gz
@@ -13,8 +13,9 @@ BuildRequires:	rsync
 LightDM tweaks for samarux-desktop.
 
 %prep
-[ -d %{name} ] && rm -Rfv %{name}
-[ -d %{_topdir}/SOURCES ] && rsync -avP --exclude '.git' --delete %{_topdir}/SOURCES/ .
+#[ -d %{name} ] && rm -Rfv %{name}
+#[ -d %{_topdir}/SOURCES ] && rsync -avP --exclude '.git' --delete %{_topdir}/SOURCES/ .
+%autosetup
 
 
 %install
@@ -31,6 +32,9 @@ LightDM tweaks for samarux-desktop.
 /var/lib/lightdm/.config/fontconfig/fonts.conf
 
 %changelog
+* Sun Apr 11 2021 Enrique Gil <mahoul@gmail.com> - 0.1-5
+- Replaced prep section with autosetup
+
 * Sat Apr 10 2021 Enrique Gil (mahoul@gmail.com) - 0.1-4
 - Renamed package to samarux-desktop-lightdm
 
