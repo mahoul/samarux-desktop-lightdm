@@ -1,0 +1,5 @@
+*.log
+*.swp
+BUILD/
+BUILDROOT/
+RPMS/
